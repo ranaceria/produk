@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
+    font-family: 'poppins', sans-serif;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 7%;
+    background-color: rgb(10 76 162 / 90%);
+    border-bottom: 1px solid #3C4856;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+.navbar .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+.navbar .logo span {
+    color: #E19E20;
+}
+.navbar .nav-menu a {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 1rem;
+}
+.navbar .nav-menu a:hover {
+    color: #E19E20;
+}
+.navbar .nav-menu a::after {
+    content: "";
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid #fff;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+.navbar .nav-menu a:hover::after {
+    transform: scaleX(0.8);
+}
+.navbar .nav-tombol a {
+    color: #fff;
+    margin: 0 0.5rem;
+}
+.nav-tombol {
+    display: none;
+}
+.banner {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(img/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.banner::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgb(255 255 255)3%, rgba(225, 225, 225, 0) 50%);
+}
+.banner .konten {
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+.banner .konten h1 {
+    font-size: 4em;
+    color: #fff;
+    text-shadow: 3px 3px 0px rgb(60 72 86 / 84%);
+    line-height: 1;
+}
+.banner .konten h1 span {
+    color: #E19E20;
+}
+.banner .konten p {
+    color: #fff;
+    text-shadow: 0px 1px 3px rgb(0 0 0);
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    font-weight: 300;
+}
+.banner .konten .tombol-beli {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #1e5aa7;
+}
+.tentang, .produk {
+    padding: 8rem 7% 1.4rem;
+}
+.tentang h2, .produk h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+.tentang h2 span, .produk h2 span {
+    color: #E19E20;
+}
+.tentang .row {
+    display: flex;
+}
+.tentang .row .row-img {
+    flex: 1 1 45rem;
+}
+.tentang .row .row-img img {
+    width: 100%;
+    border-radius: 62% 38% 50% 50% / 39% 47% 53% 61%;
+}
+.tentang .row .row-konten {
+    flex-wrap: 1 1 35rem;
+    padding: 0 1rem;
+}
+.tentang .row .row-konten h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.tentang .row .row-konten p {
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.3rem;
+}
+.produk .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+.produk .row .gambar-produk img {
+    width: 100%;
+    border-radius: 4%;
+}
+.produk .row h3 {
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 400;
+    min-height: 3rem;
+}
+.produk .row h3 a {
+    color: #3C4856;
+}
+.produk .row .harga {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+.produk .row .harga .harga-diskon {
+    color: #e19e20;
+}
+.produk .row .harga .harga-diskon .rp {
+    font-size: 0.9rem;
+    margin-right: -0.3rem;
+}
+.produk .row .harga .harga-normal {
+    text-decoration: line-through;
+}
+.footer {
+    background-color: #3C4856;
+    text-align: center;
+    margin-top: 7%;
+    padding: 1rem;
+    color: #fff;
+    font-size: 0.9rem;
+}
+.footer .cr {
+    color: #e19e20;
+}
+
+@media (max-width: 1336px) {
+    html {
+        font-size: 75%;
+    }
+}
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+    .nav-tombol {
+        display: inline-block;
+    }
+    .navbar .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #3C4856;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+    .navbar .nav-menu.aktif {
+        right: 0;
+    }
+    .navbar .nav-menu a {
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 1.6rem;
+    }
+    .tentang .row {
+        flex-wrap: wrap;
+    }
+    .tentang .row .row-img img {
+        height: 40rem;
+        object-fit: cover;
+    }
+    .tentang .row .row-konten {
+        padding: 0;
+    }
+    .tentang .row .row-konten h3 {
+        margin-top: 1rem;
+    }
+    .produk .row {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    }
+}
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+    .produk .row {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+}
